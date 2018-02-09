@@ -1,4 +1,5 @@
 ﻿using DesignPaterns.Builders;
+using DesignPaterns.Observer;
 using DesignPaterns.Stratedy;
 using System;
 using System.Collections.Generic;
@@ -16,15 +17,31 @@ namespace DesignPaterns.Formularios
         public uiNotaFiscal()
         {
             InitializeComponent();
+            this.listaAcoes = new List<IAcoesPosProcessamentoNFe>();
+            this.listaAcoes.Add(new CriaXML());
+            this.listaAcoes.Add(new EnviaEmail());
+            this.listaAcoes.Add(new Multiplicador(23));
+        }
+
+        public void AdicionaAcao(IAcoesPosProcessamentoNFe acao)
+        {
+            this.listaAcoes.Add(acao);
+        }
+
+        public uiNotaFiscal(List<IAcoesPosProcessamentoNFe> listaAcoes)
+        {
+            this.listaAcoes = listaAcoes;
         }
 
         private NotaFiscal nota { get; set; }
-        BuilderNotaFiscal builder { get; set; }
+        private BuilderNotaFiscal builder { get; set; }
+        private List<IAcoesPosProcessamentoNFe> listaAcoes { get; set; }
 
 
         private void btnCarregarNF_Click(object sender, EventArgs e)
         {
             this.CriaNf();
+
         }
 
         public void CriaNf()
@@ -33,7 +50,7 @@ namespace DesignPaterns.Formularios
             List<Imposto> impostos = new List<Imposto>();
             impostos.Add(new ICMS());
 
-            builder.ComCnpj("13465498797")
+             builder.ComCnpj("13465498797")
             .ParaEmpresa("Geper Desevenvolvimento de Sistemas")
             .ComItem(new ItemDaNota("Item 1", 20, impostos))
             .ComItem(new ItemDaNota("Item 1", 28, impostos))
@@ -42,8 +59,10 @@ namespace DesignPaterns.Formularios
             .NaData(DateTime.Now);
             this.nota = builder.Constroi();
             this.txtVisualzacaoNF.Text = this.nota.GeraRelatorio();
-            this.nota.Criaxml();
 
+            foreach (IAcoesPosProcessamentoNFe acoes in this.listaAcoes)
+                acoes.Executa(this.nota);
+            
 
         }
     }

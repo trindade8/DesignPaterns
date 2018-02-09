@@ -54,7 +54,7 @@ namespace DesignPaterns.Builders
         public string criaChaveNota()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(this.Estado).Append(this.DataEmissao.ToString("yymm")).Append(this.CNPJ).Append("55").Append("001").Append("000000098").Append("136411778").Append(this.DV);
+            sb.Append(this.Estado).Append(this.DataEmissao.ToString("yyMM")).Append(this.CNPJ).Append("55").Append("001").Append("000000098").Append("136411778").Append(this.DV);
             return sb.ToString();
         }
 
@@ -103,9 +103,6 @@ namespace DesignPaterns.Builders
             nota.AppendChild(Itens);
             XmlNode DadosAdicionais = CriaDadosAdicionais(doc);
             nota.AppendChild(DadosAdicionais);
-
-
-
             doc.Save("C:\\Gransoft\\NOTATESTE.xml");
         }
 
