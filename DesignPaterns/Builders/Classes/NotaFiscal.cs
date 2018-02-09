@@ -14,6 +14,8 @@ namespace DesignPaterns.Builders
         public double   Impostos { get; set; }
         public DateTime DataEmissao { get; private set; }
         public string   Obervacoes { get;  private set; }
+        public int Estado { set; get; }
+        public string DV { get; set; }
         public double   ValorBruto
         {
             get
@@ -37,35 +39,40 @@ namespace DesignPaterns.Builders
             Impostos = impostos;
             DataEmissao = dataEmissao;
             Obervacoes = obervacoes;
+            this.Estado = 35;
+            this.DV = "01";
         }
 
         public NotaFiscal(string razaoSocial, string cNPJ, double impostos, DateTime dataEmissao, string obervacoes, IList<ItemDaNota> todosItens)
+            : this(razaoSocial,cNPJ,impostos,dataEmissao,obervacoes)
         {
-            RazaoSocial = razaoSocial;
-            CNPJ = cNPJ;
-            Impostos = impostos;
-            DataEmissao = dataEmissao;
-            Obervacoes = obervacoes;
             this.todosItens = todosItens;
             
+            
         }
+
+        public string criaChaveNota()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(this.Estado).Append(this.DataEmissao.ToString("yymm")).Append(this.CNPJ).Append("55").Append("001").Append("000000098").Append("136411778").Append(this.DV);
+            return sb.ToString();
+        }
+
 
         public String GeraRelatorio()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("Razão Social: ").Append(this.RazaoSocial);
-            sb.AppendLine();
-            sb.Append("CNPJ: ").Append(this.CNPJ);
-            sb.AppendLine();
-            sb.Append("Data Emissão: ").Append(this.DataEmissao);
-            sb.AppendLine();
-            sb.Append("Itens : ").Append(this.DataEmissao);
-            sb.AppendLine().AppendLine();
+            sb.Append("Chave de Acesso: ").Append(this.criaChaveNota()).AppendLine();
+            sb.Append("Razão Social: ").Append(this.RazaoSocial).AppendLine(); 
+            sb.Append("CNPJ: ").Append(this.CNPJ).AppendLine();
+            sb.Append("Data Emissão: ").Append(this.DataEmissao).AppendLine();
+            sb.Append("Itens : ").Append(this.DataEmissao).AppendLine().AppendLine();
+
 
             foreach (ItemDaNota d in this.todosItens)
             {
-                sb.Append(d.ToString());
-                sb.AppendLine();
+                sb.Append(d.ToString()).AppendLine();
+
             }
 
             sb.AppendLine().AppendLine();
@@ -80,14 +87,16 @@ namespace DesignPaterns.Builders
         public void Criaxml()
         {
             XmlDocument doc = new XmlDocument();
-            //(1) the xml declaration is recommended, but not mandatory
+            
             XmlDeclaration xmlDeclaration = doc.CreateXmlDeclaration("1.0", "UTF-8", null);
             XmlElement root = doc.DocumentElement;
             doc.InsertBefore(xmlDeclaration, root);
 
-            //(2) string.Empty makes cleaner code
+
             XmlElement nota = doc.CreateElement(string.Empty, "NotaFiscal", string.Empty);
             doc.AppendChild(nota);
+            XmlNode ChaveNota = criaNode(doc, "ChaveNota", this.criaChaveNota());
+            nota.AppendChild(ChaveNota);
             XmlNode Emitente = criaDadosEmitente(doc);
             nota.AppendChild(Emitente);
             XmlNode Itens = CriaItens(doc);
