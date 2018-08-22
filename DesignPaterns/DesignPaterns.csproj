@@ -56,6 +56,13 @@
     <Compile Include="ChainOfResponsability\Conta\Formato.cs" />
     <Compile Include="ChainOfResponsability\Conta\IFormato.cs" />
     <Compile Include="Decorator\FiltroConta.cs" />
+    <Compile Include="Factory\ConnectionFactory.cs" />
+    <Compile Include="Formularios\FormTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormTeste.Designer.cs">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Relatorios\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -137,6 +144,9 @@
       <DependentUpon>uiInvestimento.cs</DependentUpon>
     </Compile>
     <Compile Include="TemplateMethod\Relatorio.cs" />
+    <EmbeddedResource Include="Formularios\FormTeste.resx">
+      <DependentUpon>FormTeste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Relatorios\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
@@ -178,6 +188,7 @@
     <EmbeddedResource Include="Formularios\uiInvestimento.resx">
       <DependentUpon>uiInvestimento.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

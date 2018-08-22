@@ -27,6 +27,9 @@ namespace DesignPaterns.Stratedy
 
         protected double CalculoOutroImposto(Orcamento orc)
         {
+
+            
+            
             if (this.OutroImposto != null)
                 return this.OutroImposto.Calcula(orc);
             else
@@ -173,6 +176,7 @@ namespace DesignPaterns.Stratedy
             if (orc.Valor > 3000)
             {
                 this.aliquota = 8;
+                
                 return ((orc.Valor * (this.aliquota / 100)) + 30)+this.CalculoOutroImposto(orc);
             }
             else if (orc.Valor >= 1000 && orc.Valor <= 3000)

@@ -41,7 +41,11 @@
             this.stateContaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.builderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notaFiscalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtIdSessao = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -131,7 +135,8 @@
             // builderToolStripMenuItem
             // 
             this.builderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.notaFiscalToolStripMenuItem});
+            this.notaFiscalToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.builderToolStripMenuItem.Name = "builderToolStripMenuItem";
             this.builderToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.builderToolStripMenuItem.Text = "Builder";
@@ -139,8 +144,33 @@
             // notaFiscalToolStripMenuItem
             // 
             this.notaFiscalToolStripMenuItem.Name = "notaFiscalToolStripMenuItem";
-            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Text = "FormTeste";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtIdSessao);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 234);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(515, 28);
+            this.panel1.TabIndex = 1;
+            // 
+            // txtIdSessao
+            // 
+            this.txtIdSessao.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtIdSessao.Location = new System.Drawing.Point(0, 0);
+            this.txtIdSessao.Multiline = true;
+            this.txtIdSessao.Name = "txtIdSessao";
+            this.txtIdSessao.ReadOnly = true;
+            this.txtIdSessao.Size = new System.Drawing.Size(515, 28);
+            this.txtIdSessao.TabIndex = 0;
             // 
             // uiMenu
             // 
@@ -151,6 +181,7 @@
             this.BackgroundImage = global::DesignPaterns.Properties.Resources.AluraPreto;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(515, 262);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
             this.DoubleBuffered = true;
             this.MainMenuStrip = this.menuStrip;
@@ -159,8 +190,11 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desing Paterns";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.uiMenu_KeyDown);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +215,8 @@
         private System.Windows.Forms.ToolStripMenuItem stateContaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem builderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem notaFiscalToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtIdSessao;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }

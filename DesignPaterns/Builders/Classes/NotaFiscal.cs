@@ -97,6 +97,8 @@ namespace DesignPaterns.Builders
             doc.AppendChild(nota);
             XmlNode ChaveNota = criaNode(doc, "ChaveNota", this.criaChaveNota());
             nota.AppendChild(ChaveNota);
+
+
             XmlNode Emitente = criaDadosEmitente(doc);
             nota.AppendChild(Emitente);
             XmlNode Itens = CriaItens(doc);
@@ -105,6 +107,9 @@ namespace DesignPaterns.Builders
             nota.AppendChild(DadosAdicionais);
             doc.Save("C:\\Gransoft\\NOTATESTE.xml");
         }
+
+
+
 
         private XmlElement criaDadosEmitente(XmlDocument documento)
         {
