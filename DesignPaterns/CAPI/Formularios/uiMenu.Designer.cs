@@ -44,6 +44,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtIdSessao = new System.Windows.Forms.TextBox();
+            this.toolStripFlyweight = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,8 @@
             this.chainOfResponsabilityToolStripMenuItem,
             this.templateMethodToolStripMenuItem,
             this.stateToolStripMenuItem,
-            this.builderToolStripMenuItem});
+            this.builderToolStripMenuItem,
+            this.toolStripFlyweight});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Size = new System.Drawing.Size(515, 24);
@@ -144,13 +146,13 @@
             // notaFiscalToolStripMenuItem
             // 
             this.notaFiscalToolStripMenuItem.Name = "notaFiscalToolStripMenuItem";
-            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.notaFiscalToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.notaFiscalToolStripMenuItem.Text = "Nota Fiscal";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.toolStripMenuItem1.Text = "FormTeste";
             // 
             // panel1
@@ -171,6 +173,12 @@
             this.txtIdSessao.ReadOnly = true;
             this.txtIdSessao.Size = new System.Drawing.Size(515, 28);
             this.txtIdSessao.TabIndex = 0;
+            // 
+            // toolStripFlyweight
+            // 
+            this.toolStripFlyweight.Name = "toolStripFlyweight";
+            this.toolStripFlyweight.Size = new System.Drawing.Size(70, 20);
+            this.toolStripFlyweight.Text = "Flyweight";
             // 
             // uiMenu
             // 
@@ -218,5 +226,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtIdSessao;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripFlyweight;
     }
 }

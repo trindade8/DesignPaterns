@@ -47,132 +47,144 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\BuilderNotaFiscal.cs" />
-    <Compile Include="Builders\Classes\ItemDaNota.cs" />
-    <Compile Include="Builders\Classes\NotaFiscal.cs" />
-    <Compile Include="ChainOfResponsability\Conta\Banco.cs" />
-    <Compile Include="ChainOfResponsability\Conta\Conta.cs" />
-    <Compile Include="ChainOfResponsability\Conta\Dropvalue.cs" />
-    <Compile Include="ChainOfResponsability\Conta\Formato.cs" />
-    <Compile Include="ChainOfResponsability\Conta\IFormato.cs" />
-    <Compile Include="Decorator\FiltroConta.cs" />
-    <Compile Include="Factory\ConnectionFactory.cs" />
-    <Compile Include="Formularios\FormTeste.cs">
+    <Compile Include="CAPII\Flyweight\INota.cs" />
+    <Compile Include="CAPII\Flyweight\NotasMusicais.cs" />
+    <Compile Include="CAPII\Flyweight\Piano.cs" />
+    <Compile Include="CAPII\Flyweight\uiPiano.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormTeste.Designer.cs">
+    <Compile Include="CAPII\Flyweight\uiPiano.Designer.cs">
+      <DependentUpon>uiPiano.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CAPI\Builders\BuilderNotaFiscal.cs" />
+    <Compile Include="CAPI\Builders\Classes\ItemDaNota.cs" />
+    <Compile Include="CAPI\Builders\Classes\NotaFiscal.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Conta\Banco.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Conta\Conta.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Conta\Dropvalue.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Conta\Formato.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Conta\IFormato.cs" />
+    <Compile Include="CAPI\Decorator\FiltroConta.cs" />
+    <Compile Include="CAPI\Factory\ConnectionFactory.cs" />
+    <Compile Include="CAPI\Formularios\FormTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CAPI\Formularios\FormTeste.Designer.cs">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Relatorios\CrystalReport1.cs">
+    <Compile Include="CAPI\Formularios\Relatorios\CrystalReport1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Formularios\uiExibicaoRelatorio.cs">
+    <Compile Include="CAPI\Formularios\uiExibicaoRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiExibicaoRelatorio.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiExibicaoRelatorio.Designer.cs">
       <DependentUpon>uiExibicaoRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiFormataConta.cs">
+    <Compile Include="CAPI\Formularios\uiFormataConta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiFormataConta.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiFormataConta.Designer.cs">
       <DependentUpon>uiFormataConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChainOfResponsability\Descontos\Desconto.cs" />
-    <Compile Include="ChainOfResponsability\Descontos\IDesconta.cs" />
-    <Compile Include="Formularios\uiDesconto.cs">
+    <Compile Include="CAPI\ChainOfResponsability\Descontos\Desconto.cs" />
+    <Compile Include="CAPI\ChainOfResponsability\Descontos\IDesconta.cs" />
+    <Compile Include="CAPI\Formularios\uiDesconto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiDesconto.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiDesconto.Designer.cs">
       <DependentUpon>uiDesconto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiImpressao.cs">
+    <Compile Include="CAPI\Formularios\uiImpressao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiImpressao.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiImpressao.Designer.cs">
       <DependentUpon>uiImpressao.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiMenu.cs">
+    <Compile Include="CAPI\Formularios\uiMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiMenu.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiMenu.Designer.cs">
       <DependentUpon>uiMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiNotaFiscal.cs">
+    <Compile Include="CAPI\Formularios\uiNotaFiscal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiNotaFiscal.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiNotaFiscal.Designer.cs">
       <DependentUpon>uiNotaFiscal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiRelatorio.cs">
+    <Compile Include="CAPI\Formularios\uiRelatorio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiRelatorio.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiRelatorio.Designer.cs">
       <DependentUpon>uiRelatorio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiStateConta.cs">
+    <Compile Include="CAPI\Formularios\uiStateConta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiStateConta.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiStateConta.Designer.cs">
       <DependentUpon>uiStateConta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\uiTributacoes.cs">
+    <Compile Include="CAPI\Formularios\uiTributacoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiTributacoes.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiTributacoes.Designer.cs">
       <DependentUpon>uiTributacoes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Observer\IAcoesPosProcessamento.cs" />
+    <Compile Include="CAPI\Observer\IAcoesPosProcessamento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="State\EstadosOrcamento.cs" />
-    <Compile Include="State\IEstadosConta.cs" />
-    <Compile Include="State\IEstadosOrcamento.cs" />
-    <Compile Include="Strategy\Impostos\CalculadorDeImposto.cs" />
-    <Compile Include="Strategy\Impostos\IImpostos.cs" />
-    <Compile Include="Strategy\Impostos\Impostos.cs" />
-    <Compile Include="Strategy\Impostos\Orcamento.cs" />
-    <Compile Include="Strategy\Investimentos\IInvestimento.cs" />
-    <Compile Include="Strategy\Investimentos\Investimento.cs" />
-    <Compile Include="Formularios\uiInvestimento.cs">
+    <Compile Include="CAPI\State\EstadosOrcamento.cs" />
+    <Compile Include="CAPI\State\IEstadosConta.cs" />
+    <Compile Include="CAPI\State\IEstadosOrcamento.cs" />
+    <Compile Include="CAPI\Strategy\Impostos\CalculadorDeImposto.cs" />
+    <Compile Include="CAPI\Strategy\Impostos\IImpostos.cs" />
+    <Compile Include="CAPI\Strategy\Impostos\Impostos.cs" />
+    <Compile Include="CAPI\Strategy\Impostos\Orcamento.cs" />
+    <Compile Include="CAPI\Strategy\Investimentos\IInvestimento.cs" />
+    <Compile Include="CAPI\Strategy\Investimentos\Investimento.cs" />
+    <Compile Include="CAPI\Formularios\uiInvestimento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\uiInvestimento.Designer.cs">
+    <Compile Include="CAPI\Formularios\uiInvestimento.Designer.cs">
       <DependentUpon>uiInvestimento.cs</DependentUpon>
     </Compile>
-    <Compile Include="TemplateMethod\Relatorio.cs" />
-    <EmbeddedResource Include="Formularios\FormTeste.resx">
+    <Compile Include="CAPI\TemplateMethod\Relatorio.cs" />
+    <EmbeddedResource Include="CAPII\Flyweight\uiPiano.resx">
+      <DependentUpon>uiPiano.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CAPI\Formularios\FormTeste.resx">
       <DependentUpon>FormTeste.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\Relatorios\CrystalReport1.rpt">
+    <EmbeddedResource Include="CAPI\Formularios\Relatorios\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiExibicaoRelatorio.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiExibicaoRelatorio.resx">
       <DependentUpon>uiExibicaoRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiFormataConta.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiFormataConta.resx">
       <DependentUpon>uiFormataConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiDesconto.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiDesconto.resx">
       <DependentUpon>uiDesconto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiMenu.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiMenu.resx">
       <DependentUpon>uiMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiNotaFiscal.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiNotaFiscal.resx">
       <DependentUpon>uiNotaFiscal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiRelatorio.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiRelatorio.resx">
       <DependentUpon>uiRelatorio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiStateConta.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiStateConta.resx">
       <DependentUpon>uiStateConta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\uiTributacoes.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiTributacoes.resx">
       <DependentUpon>uiTributacoes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -185,7 +197,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Formularios\uiInvestimento.resx">
+    <EmbeddedResource Include="CAPI\Formularios\uiInvestimento.resx">
       <DependentUpon>uiInvestimento.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />

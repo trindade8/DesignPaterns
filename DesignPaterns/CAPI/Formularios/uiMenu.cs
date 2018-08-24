@@ -30,6 +30,7 @@ namespace DesignPaterns.Formularios
             this.stateContaToolStripMenuItem.Click += onClickMenu;
             this.notaFiscalToolStripMenuItem.Click += onClickMenu;
             this.toolStripMenuItem1.Click += onClickMenu;
+            this.toolStripFlyweight.Click += onClickMenu;
         }
 
 
@@ -129,7 +130,10 @@ namespace DesignPaterns.Formularios
                     FormTeste fm = new FormTeste();
                     fm.ShowDialog();
                     break;
-
+                case "toolStripFlyweight":
+                    CAPII.Flyweight.uiPiano uiPiano = new CAPII.Flyweight.uiPiano();
+                    uiPiano.ShowDialog();
+                    break;
             }
         }
     }
